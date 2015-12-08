@@ -1,0 +1,18 @@
+<ion-view ng-controller="ListController as list" view-title="List {{list.hrefNumber}}">
+  <ion-content>
+      <div >      
+          <ul>
+              <li ng-repeat="task in list.tasks">
+                  <input type="checkbox" ng-model="task.done" ng-click="list.checkCompleted(task.done)">
+                  <span class="done-task.done">{{task.text}}  </span><span class="icon icon-right ion-trash-a" ng-show="task.done" ng-click="list.delete(task)"></span>
+              </li>
+          </ul>
+          <form name="newTodoForm" ng ng-submit="list.add()">
+              <input ng-model="list.newItem.text" required>
+              <input type="submit" value="Add">
+          </form>
+          
+              <button class="button button-block icon-left ion-trash-a" ng-show="list.tasks.length > 1" ng-click="list.deleteAll()">Delete All Completed</button>
+      </div>
+  </ion-content>
+</ion-view>

@@ -1,0 +1,9 @@
+<!--<ion-view ng-controller="OptionsController as opt" view-title="Preferences">-->
+<ion-view ng-controller="AppCtrl as app" view-title="Preferences">
+  <ion-content>
+      <div>
+          <ion-toggle ng-model="app.vibrateToggleBool" ng-change="app.vibrateToggle()" toggle-class="toggle-calm">Vibrate on Complete</ion-toggle>
+          <ion-toggle ng-model="app.allCompleteToggleBool" ng-change="app.allCompleteToggle()" toggle-class="toggle-calm">Notify When All Complete</ion-toggle>
+      </div>
+  </ion-content>
+</ion-view>
